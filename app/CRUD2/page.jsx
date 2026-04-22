@@ -45,21 +45,20 @@ export default function Home() {
   }
 
   function handleDelete(index) {
-  const novosAlunos = [];
+    const novosAlunos = [];
 
-  // recria a lista sem o que deve ser excluido
-  for (let i = 0; i < alunos.length; i++) {
-    if (i !== index) novosAlunos.push(alunos[i]);
+    // recria a lista sem o que deve ser excluido
+    for (let i = 0; i < alunos.length; i++) {
+      if (i !== index) novosAlunos.push(alunos[i]);
+    }
+
+    // atualiza a lista de alunos
+    setAlunos(novosAlunos);
   }
-
-  // atualiza a lista de alunos
-  setAlunos(novosAlunos);
-}
 
   return (
     <div className="bg-gray-800 font-sans w-screen min-h-screen flex items-center justify-center">
       <section className="w-[50%] bg-gray-300 rounded-2xl flex flex-col items-center gap-5 p-4">
-
         <div className="bg-black w-full h-23 flex flex-col items-center gap-2 rounded-xl justify-center">
           <h1 className="text-2xl font-bold text-white">
             Cadastro de Alunos Senac Competição
@@ -74,7 +73,7 @@ export default function Home() {
           onSubmit={handleSubmit}
           className="bg-black w-full h-50 flex flex-col gap-6 px-2 rounded-xl items-center justify-center "
         >
-          <div className="flex w-full gap-2">
+          <div className="flex w-full gap-2 text-gray-500">
             <input
               onChange={(e) => setNome(e.target.value)}
               value={nome}

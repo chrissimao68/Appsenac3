@@ -92,7 +92,7 @@ export default function Home() {
             />
           </div>
 
-          <div className="flex w-full gap-2">
+          <div className="flex w-full gap-2 text-gray-500">
             <input
               onChange={(e) => setCelular(e.target.value)}
               value={celular}
